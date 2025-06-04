@@ -1,0 +1,41 @@
+name: Publish Coverage Report
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build_test_coverage:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9.0.x
+    
+    - name: Restore dependencies
+      run: dotnet restore EcommerceApp/EcommerceApp.sln
+      
+    - name: Build
+      run: dotnet build EcommerceApp/EcommerceApp.sln --no-restore
+      
+    - name: Test with coverage
+      run: dotnet test EcommerceApp/EcommerceApp.sln --no-build --collect:"XPlat Code Coverage"
+      
+    - name: Install ReportGenerator
+      run: dotnet tool install -g dotnet-reportgenerator-globaltool
+      
+    - name: Generate Coverage Report
+      run: reportgenerator -reports:**/coverage.cobertura.xml -targetdir:coverage_report -reporttypes:Html
+      
+    - name: Deploy Coverage Report to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./coverage_report
+        destination_dir: coverage
+        keep_files: true

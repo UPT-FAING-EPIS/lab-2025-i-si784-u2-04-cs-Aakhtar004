@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <Authors>U2-04</Authors>
+    <Description>Ecommerce API for laboratory exercise</Description>
+    <RepositoryUrl>https://github.com/user/lab-2025-i-si784-u2-04-cs-Aakhtar004</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/user/lab-2025-i-si784-u2-04-cs-Aakhtar004</PackageProjectUrl>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.4" />
+  </ItemGroup>
+
+</Project>
