@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>SESION DE LABORATORIO N&#176; 04: PRUEBAS DE INTEGRACI&#211;N CON MOQ </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="SESION DE LABORATORIO N&#176; 04: PRUEBAS DE INTEGRACI&#211;N CON MOQ ">
+    
+    
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+
+<p><a href="https://classroom.github.com/a/oHUMAf7N"><img src="https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg" alt="Review Assignment Due Date"></a>
+<a href="https://classroom.github.com/open-in-codespaces?assignment_repo_id=19547042"><img src="https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg" alt="Open in Codespaces"></a></p>
+<h1 id="sesion-de-laboratorio-n-04-pruebas-de-integración-con-moq">SESION DE LABORATORIO N° 04: PRUEBAS DE INTEGRACIÓN CON MOQ</h1>
+<h2 id="objetivos">OBJETIVOS</h2>
+<ul>
+<li>Comprender el funcionamiento de las pruebas de integración utilizando la libreria Moq.</li>
+</ul>
+<h2 id="requerimientos">REQUERIMIENTOS</h2>
+<ul>
+<li>Conocimientos:
+<ul>
+<li>Conocimientos básicos de Bash (powershell).</li>
+<li>Conocimientos básicos de Contenedores (Docker).</li>
+</ul>
+</li>
+<li>Hardware:
+<ul>
+<li>Virtualization activada en el BIOS..</li>
+<li>CPU SLAT-capable feature.</li>
+<li>Al menos 4GB de RAM.</li>
+</ul>
+</li>
+<li>Software:
+<ul>
+<li>Windows 10 64bit: Pro, Enterprise o Education (1607 Anniversary Update, Build 14393 o Superior)</li>
+<li>Docker Desktop</li>
+<li>Powershell versión 7.x</li>
+<li>Net 8 o superior</li>
+<li>Visual Studio Code</li>
+</ul>
+</li>
+</ul>
+<h2 id="consideraciones-iniciales">CONSIDERACIONES INICIALES</h2>
+<ul>
+<li>Clonar el repositorio mediante git para tener los recursos necesarios</li>
+</ul>
+<h2 id="desarrollo">DESARROLLO</h2>
+<ol>
+<li>Iniciar la aplicación Powershell o Windows Terminal en modo administrador</li>
+<li>Ejecutar el siguiente comando para crear una nueva solución</li>
+</ol>
+<pre><code>dotnet new sln -o EcommerceApp
+</code></pre>
+<ol start="3">
+<li>Acceder a la solución creada y ejecutar el siguiente comando para crear una nueva libreria de clases y adicionarla a la solución actual.</li>
+</ol>
+<pre><code>cd EcommerceApp
+dotnet new webapi -o EcommerceApp.Api
+dotnet sln add EcommerceApp.Api
+</code></pre>
+<ol start="4">
+<li>Ejecutar el siguiente comando para crear un nuevo proyecto de pruebas y adicionarla a la solución actual</li>
+</ol>
+<pre><code>dotnet new nunit -o EcommerceApp.Tests
+dotnet sln add EcommerceApp.Tests
+dotnet add EcommerceApp.Tests reference EcommerceApp.Api
+dotnet add EcommerceApp.Tests package Moq
+</code></pre>
+<ol start="5">
+<li><p>Iniciar Visual Studio Code (VS Code) abriendo el folder de la solución como proyecto. En el proyecto EcommerceApp.Api, crear las carpetas Models y Services.</p>
+</li>
+<li><p>En VS Code, en el proyecto EcommerceApp.Api, dentro de la carpeta Models crear las siguientes interfaces:</p>
+</li>
+</ol>
+<blockquote>
+<p>IAddressInfo.cs</p>
+</blockquote>
+<pre><code class="lang-C#">namespace EcommerceApp.Api.Models;
+public interface IAddressInfo
+{
+    public string Street { get; set; }
+    public string Address { get; set; }
+    public string City { get; set; }
+    public string PostalCode { get; set; }
+    public string PhoneNumber { get; set; }         
+}
+</code></pre>
+<blockquote>
+<p>ICard.cs</p>
+</blockquote>
+<pre><code class="lang-C#">namespace EcommerceApp.Api.Models;
+public interface ICard
+{
+    public string CardNumber { get; set; }
+    public string Name { get; set; }
+    public DateTime ValidTo { get; set; }
+}
+</code></pre>
+<blockquote>
+<p>ICartItem.cs</p>
+</blockquote>
+<pre><code class="lang-C#">namespace EcommerceApp.Api.Models;
+public interface ICartItem
+{
+    public string ProductId { get; set; }
+    public int Quantity { get; set; }
+    public double Price{ get; set; }
+}
+</code></pre>
+<ol start="7">
+<li>En VS Code, en el proyecto EcommerceApp.Api, dentro de la carpeta Services crear las siguientes interfaces:</li>
+</ol>
+<blockquote>
+<p>ICartService.cs</p>
+</blockquote>
+<pre><code class="lang-C#">using EcommerceApp.Api.Models;
+namespace EcommerceApp.Api.Services;
+public interface ICartService
+{
+    double Total();
+    IEnumerable&lt;ICartItem&gt; Items();         
+}
+</code></pre>
+<blockquote>
+<p>IPaymentService.cs</p>
+</blockquote>
+<pre><code class="lang-C#">using EcommerceApp.Api.Models;
+namespace EcommerceApp.Api.Services;
+public interface IPaymentService
+{
+    bool Charge(double total, ICard card);      
+}
+</code></pre>
+<blockquote>
+<p>IShipmentService.cs</p>
+</blockquote>
+<pre><code class="lang-C#">using EcommerceApp.Api.Models;
+namespace EcommerceApp.Api.Services;
+public interface IShipmentService
+{
+    void Ship(IAddressInfo info, IEnumerable&lt;ICartItem&gt; items);
+}
+</code></pre>
+<ol start="8">
+<li>En VS Code, en el proyecto EcommerceApp.Api, dentro de la carpeta Controllers crear el siguiente controlador:</li>
+</ol>
+<blockquote>
+<p>CartController.cs</p>
+</blockquote>
+<pre><code class="lang-C#">using EcommerceApp.Api.Models;
+using EcommerceApp.Api.Services;
+using Microsoft.AspNetCore.Mvc;
+
+namespace EcommerceApp.Api.Controllers;
+[ApiController]
+[Route(&quot;[controller]&quot;)]
+public class CartController
+{
+    private readonly ICartService _cartService;
+    private readonly IPaymentService _paymentService;
+    private readonly IShipmentService _shipmentService;
+    
+    public CartController(
+      ICartService cartService,
+      IPaymentService paymentService,
+      IShipmentService shipmentService
+    ) 
+    {
+      _cartService = cartService;
+      _paymentService = paymentService;
+      _shipmentService = shipmentService;
+    }
+
+    [HttpPost]
+    public string CheckOut(ICard card, IAddressInfo addressInfo) 
+    {
+        var result = _paymentService.Charge(_cartService.Total(), card);
+        if (result)
+        {
+            _shipmentService.Ship(addressInfo, _cartService.Items());
+            return &quot;charged&quot;;
+        }
+        else {
+            return &quot;not charged&quot;;
+        }
+    }    
+}
+</code></pre>
+<ol start="9">
+<li>Luego en el proyecto EcommerceApp.Tests añadir un nuevo archivo CartControllerTests.cs e introducir el siguiente código:</li>
+</ol>
+<pre><code class="lang-C#">using EcommerceApp.Api.Controllers;
+using EcommerceApp.Api.Models;
+using EcommerceApp.Api.Services;
+using Moq;
+
+namespace EcommerceApp.Tests;
+public class ControllerTests
+{
+      private CartController controller;
+      private Mock&lt;IPaymentService&gt; paymentServiceMock;
+      private Mock&lt;ICartService&gt; cartServiceMock;
+
+      private Mock&lt;IShipmentService&gt; shipmentServiceMock;
+      private Mock&lt;ICard&gt; cardMock;
+      private Mock&lt;IAddressInfo&gt; addressInfoMock;
+      private List&lt;ICartItem&gt; items;
+
+      [SetUp]
+      public void Setup()
+      {
+          
+          cartServiceMock = new Mock&lt;ICartService&gt;();
+          paymentServiceMock = new Mock&lt;IPaymentService&gt;();
+          shipmentServiceMock = new Mock&lt;IShipmentService&gt;();
+
+          // arrange
+          cardMock = new Mock&lt;ICard&gt;();
+          addressInfoMock = new Mock&lt;IAddressInfo&gt;();
+
+          // 
+          var cartItemMock = new Mock&lt;ICartItem&gt;();
+          cartItemMock.Setup(item =&gt; item.Price).Returns(10);
+
+          items = new List&lt;ICartItem&gt;()
+          {
+              cartItemMock.Object
+          };
+
+          cartServiceMock.Setup(c =&gt; c.Items()).Returns(items.AsEnumerable());
+
+          controller = new CartController(cartServiceMock.Object, paymentServiceMock.Object, shipmentServiceMock.Object);
+      }
+
+      [Test]
+      public void ShouldReturnCharged()
+      {
+          string expected = &quot;charged&quot;;
+          paymentServiceMock.Setup(p =&gt; p.Charge(It.IsAny&lt;double&gt;(), cardMock.Object)).Returns(true);
+
+          // act
+          var result = controller.CheckOut(cardMock.Object, addressInfoMock.Object);
+
+          // assert
+          shipmentServiceMock.Verify(s =&gt; s.Ship(addressInfoMock.Object, items.AsEnumerable()), Times.Once());
+
+          Assert.That(expected, Is.EqualTo(result));
+      }
+
+      [Test]
+      public void ShouldReturnNotCharged() 
+      {
+          string expected = &quot;not charged&quot;;
+          paymentServiceMock.Setup(p =&gt; p.Charge(It.IsAny&lt;double&gt;(), cardMock.Object)).Returns(false);
+
+          // act
+          var result = controller.CheckOut(cardMock.Object, addressInfoMock.Object);
+
+          // assert
+          shipmentServiceMock.Verify(s =&gt; s.Ship(addressInfoMock.Object, items.AsEnumerable()), Times.Never());
+          Assert.That(expected, Is.EqualTo(result));
+      }    
+}
+</code></pre>
+<ol start="8">
+<li>Abrir un terminal en VS Code (CTRL + Ñ) o vuelva al terminal anteriormente abierto, y ejecutar los comandos:</li>
+</ol>
+<pre><code class="lang-Bash">dotnet test --collect:&quot;XPlat Code Coverage&quot;
+</code></pre>
+<ol start="9">
+<li>El resultado debe ser similar al siguiente.</li>
+</ol>
+<pre><code class="lang-Bash">Passed!  - Failed:     0, Passed:     2, Skipped:     0, Total:     3, Duration: 12 ms
+</code></pre>
+<ol start="10">
+<li>Finalmente proceder a verificar la cobertura, dentro del proyecto Primes.Tests se dede haber generado una carpeta o directorio TestResults, en el cual posiblemente exista otra subpcarpeta o subdirectorio conteniendo un archivo con nombre <code>coverage.cobertura.xml</code>, si existe ese archivo proceder a ejecutar los siguientes comandos desde la linea de comandos abierta anteriomente, de los contrario revisar el paso 8:</li>
+</ol>
+<pre><code>dotnet tool install -g dotnet-reportgenerator-globaltool
+ReportGenerator &quot;-reports:./*/*/*/coverage.cobertura.xml&quot; &quot;-targetdir:Cobertura&quot; -reporttypes:HTML
+</code></pre>
+<ol start="11">
+<li>El comando anterior primero proceda instalar una herramienta llamada ReportGenerator (<a href="https://reportgenerator.io/">https://reportgenerator.io/</a>) la cual mediante la segunda parte del comando permitira generar un reporte en formato HTML con la cobertura obtenida de la ejecución de las pruebas. Este reporte debe localizarse dentro de una carpeta llamada Cobertura y puede acceder a el abriendo con un navegador de internet el archivo index.htm.</li>
+</ol>
+<hr>
+<h2 id="actividades-encargadas">Actividades Encargadas</h2>
+<ol>
+<li>Reescribir los metodos adicionando un servicio de descuento sobre el monto total de la operación y crear un tercer metodo de prueba que combine los dos anteriores utilizando parametros para las pruebas.</li>
+<li>Utilizar el utilitario ddl2mmd para generar el diagrama de clases (clases.md) del proyecto EcommerceApp.Api.</li>
+<li>Completar la documentación del Clases, atributos y métodos para luego generar una automatización (publish_docs.yml) que genere la documentación utilizando DocFx y la publique en una Github Page</li>
+<li>Generar una automatización (publish_cov_report.yml) que: * Compile el proyecto y ejecute las pruebas unitarias, * Genere el reporte de cobertura, * Publique el reporte en Github Page</li>
+<li>Generar una automatización (release.yml) que: * Genere el nuget con su codigo de matricula como version del componente, * Publique el nuget en Github Packages, * Genere el release correspondiente</li>
+</ol>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/UPT-FAING-EPIS/lab-2025-i-si784-u2-04-cs-Aakhtar004/blob/main/README.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

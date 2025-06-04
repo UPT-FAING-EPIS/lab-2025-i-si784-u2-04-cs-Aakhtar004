@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class Diagram for EcommerceApp.Api </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class Diagram for EcommerceApp.Api ">
+    
+    
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="class-diagram-for-ecommerceappapi">Class Diagram for EcommerceApp.Api</h1>
+
+<pre><code class="lang-mermaid">classDiagram
+    class CartController {
+        -ICartService _cartService
+        -IPaymentService _paymentService
+        -IShipmentService _shipmentService
+        -IDiscountService _discountService
+        +CartController(ICartService, IPaymentService, IShipmentService, IDiscountService)
+        +string CheckOut(ICard, IAddressInfo)
+    }
+    
+    class ICartService {
+        &lt;&lt;interface&gt;&gt;
+        +double Total()
+        +IEnumerable&lt;ICartItem&gt; Items()
+    }
+    
+    class IPaymentService {
+        &lt;&lt;interface&gt;&gt;
+        +bool Charge(double, ICard)
+    }
+    
+    class IShipmentService {
+        &lt;&lt;interface&gt;&gt;
+        +void Ship(IAddressInfo, IEnumerable&lt;ICartItem&gt;)
+    }
+    
+    class IDiscountService {
+        &lt;&lt;interface&gt;&gt;
+        +double CalculateDiscount(double)
+    }
+    
+    class ICartItem {
+        &lt;&lt;interface&gt;&gt;
+        +string ProductId
+        +int Quantity
+        +double Price
+    }
+    
+    class ICard {
+        &lt;&lt;interface&gt;&gt;
+        +string CardNumber
+        +string Name
+        +DateTime ValidTo
+    }
+    
+    class IAddressInfo {
+        &lt;&lt;interface&gt;&gt;
+        +string Street
+        +string Address
+        +string City
+        +string PostalCode
+        +string PhoneNumber
+    }
+    
+    CartController --&gt; ICartService
+    CartController --&gt; IPaymentService
+    CartController --&gt; IShipmentService
+    CartController --&gt; IDiscountService
+    ICartService -- ICartItem
+    IPaymentService -- ICard
+    IShipmentService -- IAddressInfo
+    IShipmentService -- ICartItem
+</code></pre>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/UPT-FAING-EPIS/lab-2025-i-si784-u2-04-cs-Aakhtar004/blob/main/disenio.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

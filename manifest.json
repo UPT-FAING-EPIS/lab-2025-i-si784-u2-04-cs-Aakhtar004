@@ -1,0 +1,231 @@
+{
+  "source_base_path": "/home/runner/work/lab-2025-i-si784-u2-04-cs-Aakhtar004/lab-2025-i-si784-u2-04-cs-Aakhtar004",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcommerceApp.Api.Controllers.CartController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcommerceApp.Api.Controllers.CartController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "EcommerceApp.Api.Controllers.CartController",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcommerceApp.Api.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcommerceApp.Api.Controllers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "EcommerceApp.Api.Controllers",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcommerceApp.Api.Models.IAddressInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcommerceApp.Api.Models.IAddressInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "EcommerceApp.Api.Models.IAddressInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcommerceApp.Api.Models.ICard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcommerceApp.Api.Models.ICard.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "EcommerceApp.Api.Models.ICard",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcommerceApp.Api.Models.ICartItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcommerceApp.Api.Models.ICartItem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "EcommerceApp.Api.Models.ICartItem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcommerceApp.Api.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcommerceApp.Api.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "EcommerceApp.Api.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcommerceApp.Api.Services.ICartService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcommerceApp.Api.Services.ICartService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "EcommerceApp.Api.Services.ICartService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcommerceApp.Api.Services.IDiscountService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcommerceApp.Api.Services.IDiscountService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "EcommerceApp.Api.Services.IDiscountService",
+      "Summary": "<p sourcefile=\"api/EcommerceApp.Api.Services.IDiscountService.yml\" sourcestartlinenumber=\"1\">Interface for discount services that can be applied to cart totals</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcommerceApp.Api.Services.IPaymentService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcommerceApp.Api.Services.IPaymentService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "EcommerceApp.Api.Services.IPaymentService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcommerceApp.Api.Services.IShipmentService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcommerceApp.Api.Services.IShipmentService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "EcommerceApp.Api.Services.IShipmentService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcommerceApp.Api.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcommerceApp.Api.Services.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "EcommerceApp.Api.Services",
+      "Summary": null
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "disenio.md",
+      "output": {
+        ".html": {
+          "relative_path": "disenio.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
