@@ -81,8 +81,7 @@ jobs:
                   "**/*.{md,yml}"
                 ],
                 "exclude": [
-                  "_site/**",
-                  "Cobertura/index.html"
+                  "_site/**"
                 ]
               }
             ],
@@ -133,10 +132,12 @@ jobs:
 
         ## [Pruebas Markdown](Cobertura/SummaryGithub.md)
         EOF
+    
     - name: Generar documentación
       run: |
         docfx metadata docfx.json
         docfx build
+    
     - name: Publicar en GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
