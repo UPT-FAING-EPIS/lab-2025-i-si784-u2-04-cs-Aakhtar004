@@ -41,21 +41,21 @@
       "version": ""
     },
     {
-      "type": "Conceptual",
-      "source_relative_path": "Cobertura/SummaryGithub.md",
-      "output": {
-        ".html": {
-          "relative_path": "Cobertura/SummaryGithub.html"
-        }
-      },
-      "version": ""
-    },
-    {
       "type": "Resource",
       "source_relative_path": "Cobertura/SummaryGithub.md",
       "output": {
         "resource": {
           "relative_path": "Cobertura/SummaryGithub.md"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Cobertura/SummaryGithub.md",
+      "output": {
+        ".html": {
+          "relative_path": "Cobertura/SummaryGithub.html"
         }
       },
       "version": ""
