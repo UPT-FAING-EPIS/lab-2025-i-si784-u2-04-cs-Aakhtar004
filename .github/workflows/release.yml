@@ -1,52 +1,48 @@
-name: Create Release and Publish NuGet Package
+name: 5. Create Release and Publish NuGet Package
 
-on:
-  push:
-    tags:
-      - 'v*'
-  workflow_dispatch:
+env:
+  DOTNET_VERSION: '8.0'
+on: push
+
 
 jobs:
-  build_test_publish:
+  release:
     runs-on: ubuntu-latest
-    
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 9.0.x
-        source-url: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
-      env:
-        NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    
-    - name: Extract matricula for version
-      id: extract_matricula
-      run: echo "matricula=U2-04" >> $GITHUB_OUTPUT
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+      - name: Restore dependencies && Build solution
+        run: |
+          cd EcommerceApp
+          dotnet restore
+          dotnet build --configuration Release
+
+      - name: Pack NuGet package
+        run: |
+          dotnet pack EcommerceApp/EcommerceApp.Api/EcommerceApp.Api.csproj -c Release \
+            -p:PackageVersion=202.207.4261 \
+            -p:RepositoryUrl=https://github.com/${{ github.repository }} \
+            -p:RepositoryType=git
       
-    - name: Restore dependencies
-      run: dotnet restore EcommerceApp/EcommerceApp.sln
+      - name: NuGet sources
+        run: dotnet nuget list source
       
-    - name: Build
-      run: dotnet build EcommerceApp/EcommerceApp.sln --configuration Release --no-restore -p:Version=1.0.0-${{ steps.extract_matricula.outputs.matricula }}
+      - name: Push NuGet package to GitHub Packages
+        run: |
+          dotnet nuget push EcommerceApp/EcommerceApp.Api/bin/Release/*.nupkg \ 
+          --skip-duplicate \ 
+          --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" \ 
+          --api-key ${{ secrets.PACKAGE_NUGET }}
       
-    - name: Test
-      run: dotnet test EcommerceApp/EcommerceApp.sln --configuration Release --no-build
-      
-    - name: Pack
-      run: dotnet pack EcommerceApp/EcommerceApp.Api/EcommerceApp.Api.csproj --configuration Release --no-build -p:PackageVersion=1.0.0-${{ steps.extract_matricula.outputs.matricula }} -o nuget-packages
-      
-    - name: Publish NuGet Package to GitHub Packages
-      run: dotnet nuget push nuget-packages/*.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source https://nuget.pkg.github.com/${{ github.repository_owner }}
-      
-    - name: Create Release
-      id: create_release
-      uses: softprops/action-gh-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        files: nuget-packages/*.nupkg
-        name: Release ${{ steps.extract_matricula.outputs.matricula }}
-        draft: false
-        prerelease: false
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v2022074261
+          name: Release v2022074261
+          files: "**/*.nupkg"
