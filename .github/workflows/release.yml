@@ -35,10 +35,10 @@ jobs:
       
       - name: Push NuGet package to GitHub Packages
         run: |
-          dotnet nuget push EcommerceApp/EcommerceApp.Api/bin/Release/*.nupkg \ 
-          --skip-duplicate \ 
-          --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" \ 
-          --api-key ${{ secrets.PACKAGE_NUGET }}
+          dotnet nuget push EcommerceApp/EcommerceApp.Api/bin/Release/*.nupkg \
+            --skip-duplicate \
+            --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" \
+            --api-key ${{ secrets.PACKAGE_NUGET }}
       
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
