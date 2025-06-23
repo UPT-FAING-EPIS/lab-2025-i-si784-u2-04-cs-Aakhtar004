@@ -88,7 +88,8 @@ jobs:
             "resource": [
               {
                 "files": [
-                  "images/**"
+                  "images/**",
+                  "Cobertura/**"
                 ]
               }
             ],
