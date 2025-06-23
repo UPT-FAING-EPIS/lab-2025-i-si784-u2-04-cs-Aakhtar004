@@ -11,11 +11,351 @@
       }
     },
     {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/EcommerceApp.Api_CartController.html",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/EcommerceApp.Api_CartController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/EcommerceApp.Api_Program.html",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/EcommerceApp.Api_Program.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/EcommerceApp.Api_WeatherForecast.html",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/EcommerceApp.Api_WeatherForecast.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/SummaryGithub.md",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/SummaryGithub.md"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "Cobertura/SummaryGithub.md",
       "output": {
         ".html": {
           "relative_path": "Cobertura/SummaryGithub.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/class.js",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/class.js"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_cog.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_cog.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_cog_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_cog_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_cube.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_cube.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_cube_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_cube_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_fork.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_fork.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_fork_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_fork_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_info-circled.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_info-circled.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_info-circled_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_info-circled_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_minus.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_minus.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_minus_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_minus_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_plus.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_plus.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_plus_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_plus_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_search-minus.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_search-minus.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_search-minus_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_search-minus_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_search-plus.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_search-plus.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_search-plus_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_search-plus_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_sponsor.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_sponsor.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_star.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_star.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_star_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_star_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_up-dir.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_up-dir.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_up-dir_active.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_up-dir_active.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_up-down-dir.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_up-down-dir.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_up-down-dir_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_up-down-dir_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_wrench.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_wrench.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/icon_wrench_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/icon_wrench_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/index.htm",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/index.htm"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/index.html",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/main.js",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/main.js"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Cobertura/report.css",
+      "output": {
+        "resource": {
+          "relative_path": "Cobertura/report.css"
         }
       },
       "version": ""
